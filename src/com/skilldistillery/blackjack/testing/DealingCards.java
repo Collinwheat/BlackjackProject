@@ -15,7 +15,7 @@ public class DealingCards {
 	
 	public void deal() {
 		Deck theDeck = new Deck();
-		System.out.println(theDeck.toString());
+		System.out.println(theDeck.getDeck().size);
 	}
 
 }

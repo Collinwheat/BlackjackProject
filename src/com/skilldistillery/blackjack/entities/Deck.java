@@ -31,6 +31,10 @@ public class Deck {
 	public void setDeck(List<Card> deck) {
 		this.deck = deck;
 	}
+	
+	public List<Card> getDeck(List<Card> deck) {
+		return deck;
+	}
 		
 		
 	
