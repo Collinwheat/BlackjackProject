@@ -7,8 +7,8 @@ public class Card {
 	private Suit suit;
 	
 	public Card(Suit suit, Rank rank) {
-		suit = suit;
-		rank = rank;
+		this.suit = suit;
+		this.rank = rank;
 	}
 
 	public Rank getRank() {

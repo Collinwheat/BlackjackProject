@@ -1,53 +1,41 @@
 package com.skilldistillery.blackjack.entities;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Deck {
 	private List<Card> deck = new ArrayList<>();
-	
-	
-	public int NUMBER_OF_CARDS_IN_A_DECK = 52;
-	
-		
-	//responsible for the creation of 52 cards, and storing them in a list of cards
-	
-	private List<Card> Deck() {
-		
-		Suit [] suits = Suit.values();
-		Rank [] ranks = Rank.values();
-		
+
+	public Deck() {
+		Rank[] ranks = Rank.values();
+		Suit[] suits = Suit.values();
+
+		for (Suit suit : suits) {
 			for (Rank rank : ranks) {
-				for (Suit suit : suits) {
-					Card card = new Card(suit, rank);
-					deck.add(card);
-				}
-				
+				Card card = new Card(suit, rank);
+				deck.add(card);
 			}
-		return deck;
-			
 		}
-	
+	}
+
+	public void shuffle() {
+		Collections.shuffle(deck);
+	}
+
+	public int checkSize() {
+		return deck.size();
+	}
+
+	public Card dealCard() {
+		return deck.remove(0);
+	}
+
+	public List<Card> getDeck() {
+		return deck;
+	}
+
 	public void setDeck(List<Card> deck) {
 		this.deck = deck;
 	}
-	
-	public List<Card> getDeck(List<Card> deck) {
-		return deck;
-	}
-		
-		
-	
-	private void checkDeckSize() {
-		
-	}
-	
-	private void dealCard() {
-		
-	}
-	
-	private void shuffle() {
-		
-	}
-	
 }
